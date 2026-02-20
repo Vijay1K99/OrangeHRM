@@ -11,10 +11,11 @@ public class LoginTest1 extends BaseTest1 {
     public void verifyLoginFunction(String username, String password) {
         LoginPage1 lp = new LoginPage1(driver); //it will do two things
 
-        lp.isHRMLogoDisplayed();
-        lp.setUsernameField(username);
-        lp.setPassword(password);
-        lp.clickLoginBtn();
+   
+		 lp.isHRMLogoDisplayed();
+			lp.setUsernameField(username);
+			lp.setPassword(password);
+			lp.clickLoginBtn();
     }
 
     @DataProvider(name = "loginData")

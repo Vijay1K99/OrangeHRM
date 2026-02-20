@@ -12,58 +12,57 @@ public class LoginPage1 extends BasePage1 {
 		super(driver);
 	}
 
-	
-	@FindBy(xpath = "//img[@alt='company-branding']")
-	WebElement hrmLogo;
+	@FindBy(xpath = "//div[@id='divLogo']/img")
+	private WebElement hrmLogo;
 
-	@FindBy(xpath = "//input[@name='username']")
-	WebElement usernameField;
+	@FindBy(name = "txtUsername")
+	private WebElement usernameField;
 
-	@FindBy(xpath = "//input[@name='password']")
-	WebElement passwordField;
+	@FindBy(name = "txtPassword")
+	private WebElement passwordField;
 
-	@FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']")
-	WebElement loginBtn;
+	@FindBy(id = "btnLogin")
+	private WebElement loginBtn;
 
-	@FindBy(xpath = "//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']")
-	WebElement forgotBtn;
+	@FindBy(linkText = "Forgot your password?")
+	private WebElement forgotBtn;
 
-	@FindBy(xpath = "//a[text()='OrangeHRM, Inc']")
-	WebElement aboutHrm;
-
+	@FindBy(linkText = "About HRM")
+	private WebElement aboutHrm;
 	// Page Action
 
-    public boolean isHRMLogoDisplayed() {
-        wait.until(ExpectedConditions.visibilityOf(hrmLogo));
-        return hrmLogo.isDisplayed();
-    }
 
-    public void setUsernameField(String user) {
-        wait.until(ExpectedConditions.visibilityOf(usernameField));
-        usernameField.clear();
-        usernameField.sendKeys(user);
-    }
+public boolean isHRMLogoDisplayed() {
+    wait.until(ExpectedConditions.visibilityOf(hrmLogo));
+    return hrmLogo.isDisplayed();
+}
 
-    public void setPassword(String pwd) {
-        wait.until(ExpectedConditions.visibilityOf(passwordField));
-        passwordField.clear();
-        passwordField.sendKeys(pwd);
-    }
+public void setUsernameField(String user) {
+    wait.until(ExpectedConditions.visibilityOf(usernameField));
+    usernameField.clear();
+    usernameField.sendKeys(user);
+}
 
-    public void clickLoginBtn() {
-        wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
-        loginBtn.click();
-    }
+public void setPassword(String pwd) {
+    wait.until(ExpectedConditions.visibilityOf(passwordField));
+    passwordField.clear();
+    passwordField.sendKeys(pwd);
+}
 
-    public void clickForgotButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(forgotBtn));
-        forgotBtn.click();
-    }
+public void clickLoginBtn() {
+    wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
+    loginBtn.click();
+}
 
-    public void clickAboutHrmLink() {
-        wait.until(ExpectedConditions.elementToBeClickable(aboutHrm));
-        aboutHrm.click();
-    }
+public void clickForgotButton() {
+    wait.until(ExpectedConditions.elementToBeClickable(forgotBtn));
+    forgotBtn.click();
+}
+
+public void clickAboutHrmLink() {
+    wait.until(ExpectedConditions.elementToBeClickable(aboutHrm));
+    aboutHrm.click();
+}
 	
 	
 /*	public boolean isHRMLogoDisplayed() {
